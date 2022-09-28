@@ -10,6 +10,7 @@
   
   <body>
     <div class = "high-scores"> <a href = ""> View High Scores</a></div>
+    <div>Time <span id="time">60</span></div>
     
       <h1> Coding Quiz Challenge</h1>
       <p> Try  to keep the following code-related questions within the time limit.
@@ -19,7 +20,17 @@
 
       <div class="container">
         <div class="vertical-center">
-          <button>Start Quiz</button>
+          <button id = "start-btn">Start Quiz</button>
+        </div>
+        <div id ="questions-container">
+          <h1 id = "question"> </h1>
+          <ol id = "possible-answers">
+             <li id = "question-1" class = "answer">  </li> 
+             <li id = "question-2" class = "answer">  </li> 
+             <li id = "question-3" class = "answer">  </li>
+        </ol>
         </div>
       </div>
+      <script src = "script.js"> </script>
   </body>
+

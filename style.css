@@ -27,5 +27,44 @@ button{
     border-color: rgb(77, 21, 190);
 }
 
+button:hover{
+    opacity: .5;
+    cursor: pointer;
+}
 
+#question-1{
+    background-color: rgb(77, 21, 190);
+    padding: 12px;
+    margin-right: 350px;
+    margin-left: 350px;
+    background-blend-mode: color-burn;
+    
+}
+
+#question-2{
+    background-color: rgb(77, 21, 190);
+    padding: 12px;
+    margin-top: 15px;
+    margin-right: 350px;
+    margin-left: 350px;
+}
+
+#question-3{
+    background-color: rgb(77, 21, 190);
+    padding: 12px;
+    margin-top: 15px;
+    margin-right: 350px;
+    margin-left: 350px;
+}
+
+#question{
+    background-color: rgb(252, 160, 175);
+}
+
+#possible-answers{
+    background-color: rgb(252, 160, 175);
+    margin-top: -22px;
+    color: white;
+  
+}
 
