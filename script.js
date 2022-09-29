@@ -1,4 +1,9 @@
 var display = document.getElementById("time")
+var questionsContainer = document.getElementById("questions-container")
+var formContainer = document.querySelector(".form-container")
+var viewScores = document.getElementById("view-scores")
+var initials = document.getElementById("initials")
+var timeLeft =  document.getElementById("time").textContent
 var timer = 60
 var currentIndex = 0
 var startBtn = document.querySelector("#start-btn").addEventListener("click", 
@@ -6,11 +11,13 @@ var startBtn = document.querySelector("#start-btn").addEventListener("click",
 function startQuizTimer (){
     displayQuestions(currentIndex);
     
-        setInterval(function(){
+      var timeId = setInterval(function(){
            if(timer > 0 ){
             timer--
+           } else {
+               endQuiz()
            }
-           document.getElementById("time").textContent =  timer;
+           timeLeft =  timer;
         }, 1000)
     }
 )
@@ -49,6 +56,7 @@ var questions = [
 function displayQuestions(currentQuestionIndex){
     var currentQuestion = questions[currentQuestionIndex]
     var questionEl = document.querySelector("#question")
+    console.log(currentQuestionIndex)
     questionEl.textContent = currentQuestion.question
     var answerOne = document.querySelector("#question-1")
     var answerTwo = document.querySelector("#question-2")
@@ -69,12 +77,29 @@ for (var i = 0; i < answers.length; i++){
             timer = timer-10
         } 
         currentIndex++
-        displayQuestions(currentIndex)
-        if (currentIndex > questions[2]){
-            
+        if (currentIndex >= questions.length){
+            endQuiz()
+        } else {
+            displayQuestions(currentIndex)
         }
     })
 }
+
+function endQuiz (){
+    questionsContainer.style.display = "none"
+    formContainer.style.display = "block"
+
+}
+
+function saveScores (event){
+    event.preventDefault();
+    console.log(initials.value)
+    //initials: 
+    //score: 
+
+}
+
+viewScores.addEventListener('click', saveScores)
 
 // GIVEN I am taking a code quiz
 
