@@ -3,6 +3,7 @@ var questionsContainer = document.getElementById("questions-container")
 var formContainer = document.querySelector(".form-container")
 var viewScores = document.getElementById("view-scores")
 var initials = document.getElementById("initials")
+var tableFor = document.querySelector(".table")
 var timeLeft =  document.getElementById("time").textContent
 var timer = 60
 var currentIndex = 0
@@ -91,16 +92,24 @@ function endQuiz (){
 
 }
 
+var highScores = [
+    {
+    initials: "ZH",
+    score: 50 
+    },
+    {saveScores}
+]
+
 function saveScores (event){
     event.preventDefault();
-    console.log(initials.value)
-    //initials: 
-    //score: 
+    tableFor.style.display = "block"
+    let myString = JSON.stringify(highScores)
+    tableFor.innerHTML = myString;
+    
 
 }
 
 viewScores.addEventListener('click', saveScores)
-
 // GIVEN I am taking a code quiz
 
 // WHEN I click the start button
